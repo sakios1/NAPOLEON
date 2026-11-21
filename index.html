@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EconAcademy</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!--
+      Need a visual blank slate?
+      Remove all code in `styles.css`!
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+   
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EconAcademy</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!--
+      Need a visual blank slate?
+      Remove all code in `styles.css`!
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap"
+     rel="stylesheet">
+  </head>
+  <body>
+
+   
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EconAcademy — Академия экономики</title>
+
+<style>
+:root {
+ --bg:#f3f6fb;
+ --white:#fff;
+ --navy:#14243d;
+ --blue:#315efb;
+ --teal:#16a68a;
+ --text:#25344a;
+ --muted:#77859a;
+ --border:#e5eaf1;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+ font-family:Arial,sans-serif;
+ background:var(--bg);
+ color:var(--text);
+}
+.layout{display:flex;min-height:100vh}
+.sidebar{
+ width:255px;background:var(--navy);
+ color:white;padding:27px 17px;
+ position:fixed;height:100vh;
+ overflow-y:auto;
+}
+.logo{font-size:23px;font-weight:bold;padding:8px 12px 30px}
+.logo span{color:#55d9b0}
+.menu-title{
+ color:#8291aa;font-size:11px;
+ margin:22px 12px 10px;
+ text-transform:uppercase;
+ letter-spacing:1px;
+}
+.nav{
+ display:block;width:100%;border:0;
+ background:transparent;color:#c5d0df;
+ text-align:left;padding:13px 12px;
+ margin:3px 0;border-radius:9px;
+ cursor:pointer;font-size:14px;
+}
+.nav:hover,.nav.active{background:#263b5c;color:white}
+.main{margin-left:255px;width:calc(100% - 255px)}
+.topbar{
+ height:72px;background:white;
+ border-bottom:1px solid var(--border);
+ display:flex;justify-content:space-between;
+ align-items:center;padding:0 35px;
+}
+.topbar span{color:var(--muted);font-size:13px}
+.content{padding:32px 4%;max-width:1400px;margin:auto}
+.page{display:none}
+.page.active{display:block}
+h1{font-size:30px;margin-bottom:12px}
+h2{font-size:23px;margin-bottom:20px}
+h3{font-size:17px;margin-bottom:12px}
+p{line-height:1.7}
+.muted{color:var(--muted)}
+.hero{
+ background:linear-gradient(120deg,#172d4d,#176b72);
+ color:white;padding:38px;border-radius:17px;
+ margin-bottom:25px;
+}
+.hero h1{font-size:34px;max-width:650px}
+.hero p{color:#d4e5ec;max-width:600px}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+ gap:17px;margin:20px 0 30px;
+}
+.card{
+ background:white;border:1px solid var(--border);
+ border-radius:13px;padding:22px;
+}
+.stat{font-size:29px;font-weight:bold;margin:12px 0}
+.icon{font-size:27px}
+.course{
+ display:flex;flex-direction:column;gap:12px;
+ transition:.2s;
+}
+.course:hover{transform:translateY(-3px)}
+.course button{margin-top:auto}
+button,.btn{
+ border:0;background:var(--blue);
+ color:white;padding:12px 17px;
+ border-radius:8px;cursor:pointer;
+ font-size:14px;font-weight:bold;
+}
+button:hover{opacity:.87}
+button.secondary{background:#eaf0ff;color:var(--blue)}
+button.green{background:var(--teal)}
+button:disabled{opacity:.4;cursor:not-allowed}
+.lesson{
+ background:white;padding:28px;
+ border-radius:14px;margin:20px 0;
+ line-height:1.8;
+}
+.lesson h2{color:#1e426a}
+.lesson h3{margin-top:23px;color:#176f72}
+.formula{
+ background:#edf3ff;padding:18px;
+ border-left:4px solid var(--blue);
+ margin:18px 0;border-radius:7px;
+ font-size:17px;font-weight:bold;
+}
+.note{
+ background:#e8f7f2;padding:17px;
+ border-radius:9px;margin:18px 0;
+}
+.progress{
+ background:#e8edf5;height:9px;
+ border-radius:10px;overflow:hidden;margin:12px 0;
+}
+.progress div{height:100%;background:var(--teal);width:0}
+input[type=number],input[type=text],select{
+ padding:12px;border:1px solid var(--border);
+ border-radius:8px;width:100%;margin:8px 0 15px;
+ font-size:15px;
+}
+label{font-size:14px;display:block;margin:12px 0}
+.chart-wrap{
+ background:white;padding:20px;border-radius:12px;
+ margin:20px 0;
+}
+canvas{width:100%;height:320px}
+.quiz-option{
+ display:block;background:#f4f6fa;
+ border:1px solid var(--border);
+ padding:14px;border-radius:8px;
+ margin:10px 0;cursor:pointer;
+}
+.quiz-option:hover{border-color:var(--blue)}
+.quiz-option input{margin-right:10px}
+.feedback{padding:15px;margin:15px 0;border-radius:8px}
+footer{text-align:center;color:var(--muted);padding:30px}
+@media(max-width:800px){
+ .sidebar{width:65px;padding:15px 5px}
+ .logo{font-size:0;padding:10px 5px}
+ .logo:after{content:"EA";font-size:18px}
+ .menu-title{display:none}
+ .nav{font-size:0;text-align:center;padding:15px 2px}
+ .nav span{font-size:19px}
+ .main{margin-left:65px;width:calc(100% - 65px)}
+ .content{padding:22px 13px}
+ .topbar{padding:0 15px}
+ .hero{padding:25px}
+ .hero h1{font-size:26px}
+}
+</style>
+</head>
+
+<body>
+<div class="layout">
+
+<aside class="sidebar">
+ <div class="logo">Econ<span>Academy</span></div>
+ <div class="menu-title">Обучение</div>
+ <button class="nav active" onclick="showPage('home',this)"><span>⌂</span> Главная</button>
+ <button class="nav" onclick="showPage('courses',this)"><span>▤</span> Курсы</button>
+ <button class="nav" onclick="showPage('glossary',this)"><span>📖</span> Словарь</button>
+
+ <div class="menu-title">Практика</div>
+ <button class="nav" onclick="showPage('market',this)"><span>📈</span> Рынок</button>
+ <button class="nav" onclick="showPage('budget',this)"><span>💰</span> Бюджет</button>
+ <button class="nav" onclick="showPage('quiz',this)"><span>✎</span> Экзамен</button>
+
+ <div class="menu-title">Мой результат</div>
+ <button class="nav" onclick="showPage('progress',this)"><span>🏆</span> Достижения</button>
+</aside>
+
+<main class="main">
+<header class="topbar">
+ <strong>EconAcademy</strong>
+ <span>Образовательная платформа по экономике</span>
+</header>
+
+<div class="content">
+
+<!-- ГЛАВНАЯ -->
+
+<section id="home" class="page active">
+ <div class="hero">
+  <h1>Экономика начинается с понимания мира</h1>
+  <p>Изучай экономические процессы, анализируй рынки,
+  управляй финансами и принимай обоснованные решения.</p>
+  <button class="green" onclick="showPage('courses')">Перейти к обучению →</button>
+ </div>
+
+ <h2>Твоя статистика</h2>
+ <div class="grid">
+  <div class="card">
+   <div class="icon">📚</div>
+   <div class="muted">Изучено уроков</div>
+   <div class="stat" id="homeLessons">0</div>
+  </div>
+  <div class="card">
+   <div class="icon">⭐</div>
+   <div class="muted">Набрано баллов</div>
+   <div class="stat" id="homePoints">0</div>
+  </div>
+  <div class="card">
+   <div class="icon">🎯</div>
+   <div class="muted">Прогресс обучения</div>
+   <div class="stat" id="homeProgress">0%</div>
+  </div>
+ </div>
+
+ <h2>Направления обучения</h2>
+ <div class="grid">
+  <div class="card course">
+   <div class="icon">📊</div>
+   <h3>Микроэкономика</h3>
+   <p>Поведение потребителей, фирм и рынков.</p>
+   <button onclick="openLesson(0)">Изучить</button>
+  </div>
+  <div class="card course">
+   <div class="icon">🌍</div>
+   <h3>Макроэкономика</h3>
+   <p>ВВП, инфляция и экономический рост.</p>
+   <button onclick="openLesson(1)">Изучить</button>
+  </div>
+  <div class="card course">
+   <div class="icon">💳</div>
+   <h3>Финансы</h3>
+   <p>Деньги, бюджет, проценты и накопления.</p>
+   <button onclick="openLesson(2)">Изучить</button>
+  </div>
+ </div>
+</section>
+
+<!-- КУРСЫ -->
+
+<section id="courses" class="page">
+ <h1>Образовательные курсы</h1>
+ <p class="muted">Выбери направление и изучай теорию с практическими примерами.</p>
+ <div class="grid" id="courseList"></div>
+</section>
+
+<!-- УРОК -->
+
+<section id="lesson" class="page">
+ <button class="secondary" onclick="showPage('courses')">← Назад к курсам</button>
+ <div id="lessonContent" class="lesson"></div>
+ <button class="green" id="completeButton" onclick="completeLesson()">Отметить урок изученным ✓</button>
+</section>
+
+<!-- СЛОВАРЬ -->
+
+<section id="glossary" class="page">
+ <h1>Экономический словарь</h1>
+ <p>Основные понятия и определения экономики.</p>
+ <input type="text" id="searchTerm" placeholder="Поиск термина..." oninput="renderGlossary()">
+ <div id="glossaryList"></div>
+</section>
+
+<!-- РЫНОК -->
+
+<section id="market" class="page">
+ <h1>Симулятор рынка</h1>
+ <p class="muted">Измени спрос и предложение и посмотри, как меняется рыночное равновесие.</p>
+
+ <div class="grid">
+  <div class="card">
+   <h3>Спрос</h3>
+   <label>Интенсивность спроса</label>
+   <input type="range" id="demand" min="20" max="180" value="120" oninput="drawMarket()">
+   <p id="demandValue"></p>
+  </div>
+  <div class="card">
+   <h3>Предложение</h3>
+   <label>Интенсивность предложения</label>
+   <input type="range" id="supply" min="20" max="180" value="40" oninput="drawMarket()">
+   <p id="supplyValue"></p>
+  </div>
+ </div>
+
+ <div class="chart-wrap">
+  <h3>Кривые спроса и предложения</h3>
+  <canvas id="marketCanvas" width="800" height="340"></canvas>
+  <p id="equilibrium" class="note"></p>
+ </div>
+
+ <div class="lesson">
+  <h3>Как понимать график?</h3>
+  <p><b>Спрос:</b> обычно при росте цены величина спроса снижается.</p>
+  <p><b>Предложение:</b> обычно при росте цены величина предложения увеличивается.</p>
+  <p><b>Равновесие:</b> точка пересечения кривых, в которой величины спроса и предложения совпадают.</p>
+ </div>
+</section>
+
+<!-- БЮДЖЕТ -->
+
+<section id="budget" class="page">
+ <h1>Симулятор личного бюджета</h1>
+ <p>Научись планировать доходы, расходы и сбережения.</p>
+
+ <div class="grid">
+  <div class="card">
+   <h3>Твой доход (₸)</h3>
+   <input type="number" id="income" value="250000" min="0">
+   <h3>Расходы (₸)</h3>
+   <label>Жильё</label>
+   <input type="number" id="housing" value="80000" min="0">
+   <label>Питание</label>
+   <input type="number" id="food" value="50000" min="0">
+   <label>Транспорт</label>
+   <input type="number" id="transport" value="20000" min="0">
+   <label>Развлечения</label>
+   <input type="number" id="fun" value="15000" min="0">
+   <label>Другие расходы</label>
+   <input type="number" id="other" value="10000" min="0">
+   <button onclick="calculateBudget()">Рассчитать бюджет</button>
+  </div>
+
+  <div class="card">
+   <h3>Результаты расчёта</h3>
+   <p class="muted">Общие расходы</p>
+   <div class="stat" id="totalExpenses">175 000 ₸</div>
+   <p class="muted">Остаток денег</p>
+   <div class="stat" id="balance">75 000 ₸</div>
+   <p class="muted">Доля сбережений</p>
+   <div class="stat" id="saving">30%</div>
+   <div class="progress"><div id="budgetBar"></div></div>
+   <div id="budgetMessage" class="note">Управляй своими финансами!</div>
+  </div>
+ </div>
+
+ <div class="lesson">
+  <h3>Экономическое правило 50/30/20</h3>
+  <p>50% дохода - необходимые расходы.</p>
+  <p>30% - желания и развлечения.</p>
+  <p>20% - накопления и финансовые цели.</p>
+  <p class="muted">Это ориентир для планирования, а не обязательное правило.</p>
+ </div>
+</section>
+
+<!-- ЭКЗАМЕН -->
+
+<section id="quiz" class="page">
+ <h1>Итоговый экзамен</h1>
+ <p class="muted">10 вопросов по основам экономики. За каждый правильный ответ начисляется 10 баллов.</p>
+ <div id="quizContainer"></div>
+ <button onclick="checkQuiz()">Завершить экзамен</button>
+ <div id="quizResult"></div>
+</section>
+
+<!-- ПРОГРЕСС -->
+
+<section id="progress" class="page">
+ <h1>Мои достижения 🏆</h1>
+ <div class="grid">
+  <div class="card">
+   <p class="muted">Пройдено уроков</p>
+   <div class="stat" id="progressLessons">0 / 8</div>
+  </div>
+  <div class="card">
+   <p class="muted">Общий результат экзамена</p>
+   <div class="stat" id="progressPoints">0</div>
+  </div>
+ </div>
+ <h2>Твой учебный путь</h2>
+ <div class="progress"><div id="mainBar"></div></div>
+ <p id="progressText"></p>
+ <div id="achievements" class="grid"></div>
+ <button class="secondary" onclick="resetProgress()">Сбросить прогресс</button>
+</section>
+
+<footer>© 2026 EconAcademy · Образовательный проект</footer>
+</div>
+</main>
+</div>
+
+<script>
+
+// ДАННЫЕ КУРСОВ
+
+const lessons = [
+{
+ title:"Микроэкономика",
+ subtitle:"Поведение потребителей и производителей",
+ sections:[
+ ["Что такое микроэкономика?",
+ "Микроэкономика изучает поведение отдельных экономических субъектов: потребителей, предприятий и владельцев ресурсов. Она объясняет, как формируются цены, как распределяются ресурсы и почему люди принимают определённые решения."],
+ ["Ограниченность ресурсов",
+ "Экономические ресурсы ограничены, тогда как человеческие потребности практически безграничны. Поэтому общество вынуждено выбирать, какие товары и услуги производить."],
+ ["Альтернативные издержки",
+ "Альтернативные издержки - ценность лучшего из вариантов, от которого пришлось отказаться при выборе. Например, если ты потратил вечер на работу, альтернативной стоимостью может быть упущенное время отдыха."],
+ ["Спрос и предложение",
+ "Спрос показывает зависимость между ценой товара и количеством, которое покупатели готовы приобрести. Предложение отражает зависимость цены и количества товара, которое продавцы готовы предложить."],
+ ["Эластичность",
+ "Эластичность спроса показывает, насколько сильно меняется количество покупаемого товара при изменении его цены. Если спрос сильно реагирует на цену, он эластичный."]
+ ],
+ formula:"Эластичность спроса = % изменения количества спроса / % изменения цены",
+ example:"Цена товара выросла на 10%, а количество покупок снизилось на 20%. Эластичность по модулю равна 2. Это эластичный спрос."
+},
+{
+ title:"Макроэкономика",
+ subtitle:"Экономика страны в целом",
+ sections:[
+ ["Понятие макроэкономики",
+ "Макроэкономика исследует экономику страны в целом: общий выпуск, уровень цен, занятость, государственную политику и экономический рост."],
+ ["Валовой внутренний продукт",
+ "ВВП - рыночная стоимость конечных товаров и услуг, произведённых внутри страны за определённый период времени."],
+ ["Инфляция",
+ "Инфляция - устойчивый рост общего уровня цен. При инфляции покупательная способность денег снижается."],
+ ["Безработица",
+ "Безработица возникает, когда люди, способные и желающие работать, не могут найти работу. Она может быть фрикционной, структурной и циклической."],
+ ["Экономический рост",
+ "Экономический рост означает увеличение объёма производства товаров и услуг. Его могут обеспечивать технологии, образование, инвестиции и производительность."]
+ ],
+ formula:"ВВП = C + I + G + (X − M)",
+ example:"C - потребление, I - инвестиции, G - государственные закупки, X - экспорт, M - импорт."
+},
+{
+ title:"Финансовая грамотность",
+ subtitle:"Личные деньги и управление финансами",
+ sections:[
+ ["Личный бюджет",
+ "Бюджет - план доходов и расходов за определённый период. Его составление позволяет контролировать финансы и избегать лишних затрат."],
+ ["Сбережения",
+ "Сбережения - часть дохода, которая не расходуется на текущее потребление. Они помогают подготовиться к неожиданным расходам и крупным покупкам."],
+ ["Простые проценты",
+ "При простых процентах начисление производится только на первоначальную сумму вклада или долга."],
+ ["Сложные проценты",
+ "При сложных процентах начисленные проценты добавляются к основной сумме, поэтому следующие проценты рассчитываются уже на увеличенную сумму."],
+ ["Кредитование",
+ "Кредит - предоставление денег заёмщику на условиях возвратности, срочности и, как правило, платности."]
+ ],
+ formula:"A = P × (1 + r)ⁿ",
+ example:"Если положить 100 000 ₸ под 10% годовых со сложной капитализацией, через два года получится 121 000 ₸."
+},
+{
+ title:"Банковская система",
+ subtitle:"Как работают банки и деньги",
+ sections:[
+ ["Функции банков",
+ "Банки принимают вклады, предоставляют кредиты, проводят платежи и оказывают другие финансовые услуги."],
+ ["Центральный банк",
+ "Центральный банк отвечает за денежно-кредитную политику, ценовую стабильность и функционирование денежной системы страны."],
+ ["Процентная ставка",
+ "Процентная ставка определяет стоимость заимствования денег или доходность сбережений. Её изменение влияет на потребление и инвестиции."],
+ ["Денежная масса",
+ "Денежная масса - совокупность денежных средств в экономике, включающая наличные и различные виды безналичных денег."]
+ ],
+ formula:"Процент = Сумма × Ставка × Время",
+ example:"При сумме 100 000 ₸ и простой ставке 10% годовых за год начисляется 10 000 ₸."
+},
+{
+ title:"Государственная экономика",
+ subtitle:"Налоги, бюджет и государственная политика",
+ sections:[
+ ["Государственный бюджет",
+ "Государственный бюджет - план доходов и расходов государства. Основные источники доходов включают налоги и другие поступления."],
+ ["Налоги",
+ "Налоги - обязательные платежи физических и юридических лиц государству. Они финансируют общественные услуги и инфраструктуру."],
+ ["Фискальная политика",
+ "Фискальная политика - использование государственных расходов и налогов для воздействия на экономическую активность."],
+ ["Государственный долг",
+ "Государственный долг - обязательства государства перед кредиторами. Он может использоваться для финансирования расходов и инвестиций."]
+ ],
+ formula:"Бюджетное сальдо = Доходы - Расходы",
+ example:"Если доходы государства составляют 10 трлн ₸, а расходы - 12 трлн ₸, дефицит равен 2 трлн ₸."
+},
+{
+ title:"Международная экономика",
+ subtitle:"Мировая торговля и валюты",
+ sections:[
+ ["Международная торговля",
+ "Международная торговля - обмен товарами и услугами между странами. Она позволяет специализироваться на производстве и использовать преимущества международного разделения труда."],
+ ["Экспорт и импорт",
+ "Экспорт - продажа товаров и услуг за границу. Импорт — приобретение товаров и услуг из других стран."],
+ ["Валютный курс",
+ "Валютный курс показывает, сколько единиц одной валюты необходимо обменять на единицу другой валюты."],
+ ["Платёжный баланс",
+ "Платёжный баланс отражает экономические операции между резидентами страны и остальным миром за определённый период."]
+ ],
+ formula:"Чистый экспорт = Экспорт - Импорт",
+ example:"Если экспорт составляет 50 млрд долларов, а импорт - 40 млрд долларов, чистый экспорт равен 10 млрд долларов."
+},
+{
+ title:"Предпринимательство",
+ subtitle:"Бизнес и создание стоимости",
+ sections:[
+ ["Предпринимательская деятельность",
+ "Предпринимательство - самостоятельная деятельность, связанная с организацией бизнеса, использованием ресурсов и принятием рисков."],
+ ["Бизнес-модель",
+ "Бизнес-модель описывает, какую ценность компания предлагает клиентам, как создаёт её и получает доход."],
+ ["Себестоимость",
+ "Себестоимость - совокупность затрат на производство и реализацию продукции или услуги."],
+ ["Рентабельность",
+ "Рентабельность характеризует эффективность использования ресурсов и соотношение прибыли с затратами или активами."]
+ ],
+ formula:"Прибыль = Выручка - Все расходы",
+ example:"Компания получила выручку 2 млн ₸ и понесла расходы 1,5 млн ₸. Прибыль составила 500 000 ₸."
+},
+{
+ title:"Рынки и конкуренция",
+ subtitle:"Формирование цен и рыночные структуры",
+ sections:[
+ ["Совершенная конкуренция",
+ "Рынок с большим числом продавцов и покупателей, однородным продуктом и свободным входом и выходом участников."],
+ ["Монополия",
+ "Монополия - рыночная структура, в которой один продавец контролирует предложение определённого товара или услуги."],
+ ["Олигополия",
+ "Олигополия характеризуется наличием небольшого числа крупных компаний, решения которых влияют друг на друга."],
+ ["Рыночное равновесие",
+ "Рыночное равновесие возникает, когда величина спроса равна величине предложения."]
+ ],
+ formula:"Qd = Qs",
+ example:"Равновесие достигается в точке, где количество товара, которое покупатели хотят приобрести, равно количеству, которое продавцы хотят реализовать."
+}
+];
+
+// НАВИГАЦИЯ
+
+function showPage(id,btn){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.querySelectorAll('.nav').forEach(n=>n.classList.remove('active'));
+ if(btn)btn.classList.add('active');
+ updateStats();
+ if(id==="market")drawMarket();
+}
+
+function openLesson(i){
+ currentLesson=i;
+ const l=lessons[i];
+ let html=`<h1>${l.title}</h1><p class="muted">${l.subtitle}</p>`;
+ l.sections.forEach((s,index)=>{
+  html+=`<h3>${index+1}. ${s[0]}</h3><p>${s[1]}</p>`;
+ });
+ html+=`<div class="formula">${l.formula}</div>
+ <div class="note"><b>Пример:</b> ${l.example}</div>`;
+ document.getElementById('lessonContent').innerHTML=html;
+ document.getElementById('completeButton').textContent=
+ completed.includes(i)?"✓ Урок уже изучен":"Отметить урок изученным ✓";
+ showPage('lesson');
+}
+
+let currentLesson=0;
+let completed=JSON.parse(localStorage.getItem('econLessons')||'[]');
+let points=Number(localStorage.getItem('econPoints')||0);
+
+function completeLesson(){
+ if(!completed.includes(currentLesson)){
+  completed.push(currentLesson);
+  points+=10;
+  save();
+ }
+ document.getElementById('completeButton').textContent="✓ Урок изучен";
+ updateStats();
+}
+
+function save(){
+ localStorage.setItem('econLessons',JSON.stringify(completed));
+ localStorage.setItem('econPoints',points);
+ updateStats();
+}
+
+function updateStats(){
+ const count=completed.length;
+ const percent=Math.round(count/lessons.length*100);
+ document.getElementById('homeLessons').textContent=count;
+ document.getElementById('homePoints').textContent=points;
+ document.getElementById('homeProgress').textContent=percent+'%';
+ document.getElementById('progressLessons').textContent=count+' / 8';
+ document.getElementById('progressPoints').textContent=points;
+ document.getElementById('mainBar').style.width=percent+'%';
+ document.getElementById('progressText').textContent='Завершено '+percent+'% программы';
+ document.getElementById('achievements').innerHTML=
+ `<div class="card">${count>=1?'🏅':'🔒'} Первый урок</div>
+ <div class="card">${count>=4?'🥉':'🔒'} Исследователь экономики</div>
+ <div class="card">${count>=8?'🏆':'🔒'} Экономический эксперт</div>`;
+}
+
+function resetProgress(){
+ if(confirm('Удалить весь прогресс обучения?')){
+  completed=[];points=0;
+  save();
+  updateStats();
+ }
+}
+
+// КУРСЫ
+
+function renderCourses(){
+ document.getElementById('courseList').innerHTML=lessons.map((l,i)=>`
+ <div class="card course">
+ <div class="icon">📘</div>
+ <h3>${l.title}</h3>
+ <p>${l.subtitle}</p>
+ <p class="muted">${l.sections.length} учебных тем</p>
+ <div class="progress"><div style="width:${completed.includes(i)?100:0}%"></div></div>
+ <button onclick="openLesson(${i})">${completed.includes(i)?'Повторить':'Начать курс'}</button>
+ </div>`).join('');
+}
+
+// СЛОВАРЬ
+
+const terms=[
+ ["Альтернативные издержки","Ценность лучшей упущенной альтернативы при принятии решения."],
+ ["Бюджет","План доходов и расходов за определённый период."],
+ ["ВВП","Стоимость конечных товаров и услуг, произведённых внутри страны за период."],
+ ["Дефицит","Ситуация, когда расходы превышают доходы или спрос превышает предложение."],
+ ["Инвестиции","Вложения ресурсов с целью получения будущей выгоды."],
+ ["Инфляция","Устойчивый рост общего уровня цен."],
+ ["Капитал","Ресурсы, используемые для производства товаров и услуг."],
+ ["Конкуренция","Соперничество участников рынка."],
+ ["Монополия","Рынок с одним основным продавцом."],
+ ["Налог","Обязательный платёж государству."],
+ ["Предложение","Количество товара, которое продавцы готовы реализовать."],
+ ["Прибыль","Разница между выручкой и расходами."],
+ ["Рентабельность","Показатель эффективности деятельности."],
+ ["Спрос","Количество товара, которое покупатели готовы приобрести."],
+ ["Экспорт","Продажа товаров и услуг за границу."],
+ ["Импорт","Покупка товаров и услуг из-за границы."],
+ ["Безработица","Отсутствие работы у людей, которые её ищут и готовы работать."],
+ ["Эластичность","Степень реакции одной экономической переменной на изменение другой."]
+];
+
+function renderGlossary(){
+ const q=document.getElementById('searchTerm').value.toLowerCase();
+ document.getElementById('glossaryList').innerHTML=terms
+ .filter(t=>(t[0]+' '+t[1]).toLowerCase().includes(q))
+ .map(t=>`<div class="lesson"><h3>${t[0]}</h3><p>${t[1]}</p></div>`).join('')
+ ||'<p>Ничего не найдено.</p>';
+}
+
+// СИМУЛЯТОР РЫНКА
+
+function drawMarket(){
+ const canvas=document.getElementById('marketCanvas');
+ const ctx=canvas.getContext('2d');
+ const d=Number(document.getElementById('demand').value);
+ const s=Number(document.getElementById('supply').value);
+ document.getElementById('demandValue').textContent=d;
+ document.getElementById('supplyValue').textContent=s;
+ ctx.clearRect(0,0,800,340);
+
+ const left=65,right=760,top=25,bottom=285;
+ ctx.strokeStyle='#64748b';ctx.lineWidth=2;
+ ctx.beginPath();
+ ctx.moveTo(left,top);ctx.lineTo(left,bottom);
+ ctx.lineTo(right,bottom);ctx.stroke();
+
+ ctx.fillStyle='#25344a';
+ ctx.font='14px Arial';
+ ctx.fillText('Цена',15,35);
+ ctx.fillText('Количество',680,320);
+
+ function x(q){return left+q*3.5}
+ function y(p){return bottom-p*2.3}
+
+ // Спрос: P = d - Q
+ ctx.strokeStyle='#315efb';ctx.lineWidth=3;
+ ctx.beginPath();
+ ctx.moveTo(x(0),y(d));
+ ctx.lineTo(x(100),y(d-100));
+ ctx.stroke();
+
+ // Предложение: P = Q + s
+ ctx.strokeStyle='#16a68a';
+ ctx.beginPath();
+ ctx.moveTo(x(0),y(s));
+ ctx.lineTo(x(100),y(s+100));
+ ctx.stroke();
+
+ ctx.fillStyle='#315efb';
+ ctx.fillText('Спрос',630,70);
+ ctx.fillStyle='#16a68a';
+ ctx.fillText('Предложение',630,90);
+
+ // Точка пересечения
+ const q=(d-s)/2;
+ const p=(d+s)/2;
+
+ if(q>=0 && q<=100 && p>=0 && p<=110){
+  ctx.fillStyle='#e35c58';
+  ctx.beginPath();
+  ctx.arc(x(q),y(p),7,0,Math.PI*2);
+  ctx.fill();
+  document.getElementById('equilibrium').textContent=
+  `Равновесие: количество ≈ ${q.toFixed(1)}, цена ≈ ${p.toFixed(1)} условных единиц.`;
+ }else{
+  document.getElementById('equilibrium').textContent=
+  'Точка равновесия находится за пределами отображаемого графика.';
+ }
+}
+
+// БЮДЖЕТ
+
+function calculateBudget(){
+ const get=id=>Math.max(0,Number(document.getElementById(id).value)||0);
+ const income=get('income');
+ const expenses=['housing','food','transport','fun','other']
+ .reduce((sum,id)=>sum+get(id),0);
+ const balance=income-expenses;
+ const saving=income>0?balance/income*100:0;
+
+ document.getElementById('totalExpenses').textContent=expenses.toLocaleString('ru-RU')+' ₸';
+ document.getElementById('balance').textContent=balance.toLocaleString('ru-RU')+' ₸';
+ document.getElementById('saving').textContent=saving.toFixed(1)+'%';
+ document.getElementById('budgetBar').style.width=
+ Math.max(0,Math.min(100,saving))+'%';
+
+ document.getElementById('budgetMessage').textContent=
+ income===0?'Укажи доход для расчёта.':
+ balance<0?'Внимание! Расходы превышают доходы.':
+ saving>=20?'Отлично! У тебя есть возможность создавать накопления.':
+ 'Попробуй пересмотреть расходы и увеличить сбережения.';
+}
+
+// ЭКЗАМЕН
+
+const questions=[
+ {q:'Что изучает микроэкономика?',a:['Экономику отдельного потребителя и фирмы','Экономику всего мира','Только государственный бюджет'],c:0},
+ {q:'Что такое ВВП?',a:['Общий государственный долг','Стоимость конечного производства внутри страны','Количество денег в банках'],c:1},
+ {q:'Что происходит при инфляции?',a:['Растёт покупательная способность денег','Общий уровень цен снижается','Общий уровень цен растёт'],c:2},
+ {q:'Что такое альтернативные издержки?',a:['Стоимость лучшей упущенной альтернативы','Все расходы государства','Размер прибыли'],c:0},
+ {q:'Что показывает спрос?',a:['Количество произведённых товаров','Готовность покупателей приобретать товары','Количество налогов'],c:1},
+ {q:'Что такое экспорт?',a:['Покупка зарубежных товаров','Продажа товаров за границу','Обмен валюты'],c:1},
+ {q:'Как рассчитывается прибыль?',a:['Выручка минус расходы','Расходы плюс налоги','Доход минус инфляция'],c:0},
+ {q:'Что такое центральный банк?',a:['Обычный магазин','Орган денежно-кредитной политики страны','Частная торговая компания'],c:1},
+ {q:'Что такое бюджетный дефицит?',a:['Доходы больше расходов','Доходы равны расходам','Расходы больше доходов'],c:2},
+ {q:'Что такое сложные проценты?',a:['Проценты только на первоначальную сумму','Проценты на основную сумму и начисленные проценты','Отсутствие процентов'],c:1}
+];
+
+function renderQuiz(){
+ document.getElementById('quizContainer').innerHTML=questions.map((q,i)=>`
+ <div class="question card" style="margin:18px 0">
+ <h3>${i+1}. ${q.q}</h3>
+ ${q.a.map((a,j)=>`
+ <label class="quiz-option">
+ <input type="radio" name="question${i}" value="${j}">
+ ${a}
+ </label>`).join('')}
+ </div>`).join('');
+}
+
+function checkQuiz(){
+ let score=0;
+ let answered=0;
+ questions.forEach((q,i)=>{
+  const selected=document.querySelector(`input[name="question${i}"]:checked`);
+  if(selected){
+   answered++;
+   if(Number(selected.value)===q.c)score++;
+  }
+ });
+ if(answered!==questions.length){
+  document.getElementById('quizResult').innerHTML=
+  `<div class="feedback" style="background:#fff1db">
+  Ответь на все вопросы! Отвечено: ${answered} из ${questions.length}.
+  </div>`;
+  return;
+ }
+ const percent=score*10;
+ points+=percent;
+ localStorage.setItem('econPoints',points);
+ document.getElementById('quizResult').innerHTML=
+ `<div class="feedback" style="background:#e8f7f2">
+ <h2>Результат экзамена: ${score}/10</h2>
+ <h3>${percent} баллов из 100</h3>
+ <p>${score>=9?'Превосходно! Ты отлично разбираешься в экономике!':
+ score>=7?'Хороший результат! Продолжай обучение.':
+ score>=5?'Неплохо, но стоит повторить некоторые темы.':
+ 'Рекомендуем повторить учебные материалы и пройти экзамен снова.'}</p>
+ </div>`;
+ updateStats();
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ЗАПУСК
+
+renderCourses();
+renderGlossary();
+renderQuiz();
+updateStats();
+calculateBudget();
+drawMarket();
+
+</script>
+</body>
+</html>
+
+

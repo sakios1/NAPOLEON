@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>UNESCO CLUB</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!--
+      Need a visual blank slate?
+      Remove all code in `styles.css`!
+    -->
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="/" aria-current="page">Home</a>
+      <a href="/page2.html">Other page</a>
+    </nav>
+    <main>
+  
+    </main>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#002F6C">
+  <meta name="description" content="UNESCO Club NIS Aktobe - сообщество учеников, объединённых идеями образования, культуры и устойчивого развития.">
+  <title>UNESCO Club - NIS Aktobe</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    try {
+      if (localStorage.getItem('unesco-theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    } catch (e) {}
+  </script>
+
+  <style>
+    :root {
+      --navy: #9ABD97;
+      --blue: #009CDE;
+      --gold: #D4AF37;
+
+      --page: #ffffff;
+      --section: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+
+      /* Цветная шапка вместо белой */
+      --header: rgba(224, 242, 254, 0.97);
+      --mobile-menu: #eff8ff;
+      --soft-blue: #e7f6fc;
+      --soft-cream: #f8f3e4;
+      --values-bg: #f5f9fc;
+      --control-bg: #ffffff;
+    }
+
+    html.dark {
+      color-scheme: dark;
+
+      --page: #0b1120;
+      --section: #111827;
+      --card: #1e293b;
+      --text: #e2e8f0;
+      --muted: #cbd5e1;
+      --border: #334155;
+
+      --header: rgba(15, 23, 42, 0.98);
+      --mobile-menu: #111827;
+      --soft-blue: #1e293b;
+      --soft-cream: #1e293b;
+      --values-bg: #111827;
+      --control-bg: #1e293b;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--page);
+      color: var(--text);
+      transition: background-color .25s ease, color .25s ease;
+    }
+
+    /* ШАПКА */
+    header.fixed {
+      background: var(--header) !important;
+      color: var(--text) !important;
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.07);
+      transition: background .25s ease, border-color .25s ease;
+    }
+
+    /* ЧЕТЫРЕ КНОПКИ — РАЗНЫЕ ЦВЕТА */
+    .nav-link {
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 13px !important;
+      border-radius: 12px !important;
+      border: 1px solid transparent;
+      font-size: 12px;
+      font-weight: 800 !important;
+      text-decoration: none;
+      white-space: nowrap;
+      opacity: 1 !important;
+      transition: transform .2s ease, box-shadow .2s ease,
+                  background .2s ease, color .2s ease;
+    }
+
+    /* 1. О клубе — СИНИЙ */
+    .nav-link:nth-child(1) {
+      background: #dbeafe !important;
+      color: #1d4ed8 !important;
+      border-color: #93c5fd !important;
+    }
+
+    /* 2. Департаменты — ЗЕЛЁНЫЙ */
+    .nav-link:nth-child(2) {
+      background: #dcfce7 !important;
+      color: #166534 !important;
+      border-color: #86efac !important;
+    }
+
+    /* 3. Деятельность — ОРАНЖЕВЫЙ */
+    .nav-link:nth-child(3) {
+      background: #ffedd5 !important;
+      color: #9a3412 !important;
+      border-color: #fdba74 !important;
+    }
+
+    /* 4. Наши ценности — ФИОЛЕТОВЫЙ */
+    .nav-link:nth-child(4) {
+      background: #f3e8ff !important;
+      color: #6b21a8 !important;
+      border-color: #d8b4fe !important;
+    }
+
+    .nav-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 14px rgba(15, 23, 42, .15);
+    }
+
+    /* Разные цвета кнопок в НОЧНОМ режиме */
+    html.dark .nav-link:nth-child(1) {
+      background: #1e3a8a !important;
+      color: #dbeafe !important;
+      border-color: #3b82f6 !important;
+    }
+
+    html.dark .nav-link:nth-child(2) {
+      background: #14532d !important;
+      color: #dcfce7 !important;
+      border-color: #22c55e !important;
+    }
+
+    html.dark .nav-link:nth-child(3) {
+      background: #7c2d12 !important;
+      color: #ffedd5 !important;
+      border-color: #f97316 !important;
+    }
+
+    html.dark .nav-link:nth-child(4) {
+      background: #581c87 !important;
+      color: #f3e8ff !important;
+      border-color: #a855f7 !important;
+    }
+
+    html.dark .nav-link:hover {
+      filter: brightness(1.2);
+      transform: translateY(-2px);
+    }
+
+    #mobileMenu {
+      background-color: var(--mobile-menu) !important;
+      color: var(--text) !important;
+      border-color: var(--border) !important;
+    }
+
+    #mobileMenu a {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      color: var(--text) !important;
+      transition: background .2s ease;
+    }
+
+    #mobileMenu a:nth-child(1) {
+      background: #dbeafe;
+      color: #1d4ed8 !important;
+    }
+
+    #mobileMenu a:nth-child(2) {
+      background: #dcfce7;
+      color: #166534 !important;
+    }
+
+    #mobileMenu a:nth-child(3) {
+      background: #ffedd5;
+      color: #9a3412 !important;
+    }
+
+    #mobileMenu a:nth-child(4) {
+      background: #f3e8ff;
+      color: #6b21a8 !important;
+    }
+
+    html.dark #mobileMenu a:nth-child(1) {
+      background: #1e3a8a;
+      color: #dbeafe !important;
+    }
+
+    html.dark #mobileMenu a:nth-child(2) {
+      background: #14532d;
+      color: #dcfce7 !important;
+    }
+
+    html.dark #mobileMenu a:nth-child(3) {
+      background: #7c2d12;
+      color: #ffedd5 !important;
+    }
+
+    html.dark #mobileMenu a:nth-child(4) {
+      background: #581c87;
+      color: #f3e8ff !important;
+    }
+
+    #mobileMenu a:hover {
+      filter: brightness(1.08);
+    }
+
+    .hero-bg {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(0,156,222,.25), transparent 30%),
+        radial-gradient(circle at 15% 90%, rgba(212,175,55,.14), transparent 25%),
+        linear-gradient(135deg, #001d45 0%, #002F6C 55%, #004b86 100%);
+    }
+
+    .gold-text {
+      color: var(--gold);
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #fff, #83d8ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .department-card {
+      background-color: var(--card);
+      color: var(--text);
+      border-color: var(--border);
+      transition: transform .25s ease, box-shadow .25s ease,
+                  background-color .25s ease, color .25s ease;
+    }
+
+    .department-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 18px 35px rgba(0,47,108,.13);
+    }
+
+    .section-label {
+      letter-spacing: .18em;
+    }
+
+    .glow {
+      box-shadow: 0 0 70px rgba(0,156,222,.15);
+    }
+
+    .circle-decoration {
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 50%;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    #themeToggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--control-bg);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color .25s ease, color .25s ease;
+    }
+
+    #themeToggle:hover {
+      opacity: .82;
+    }
+
+    #menuButton {
+      color: var(--text);
+      border-radius: 10px;
+    }
+
+    html.dark #menuButton {
+      color: #f8fafc !important;
+    }
+
+    body,
+    section,
+    header,
+    footer,
+    #mobileMenu,
+    article,
+    .department-card {
+      transition: background-color .25s ease, color .25s ease,
+                  border-color .25s ease;
+    }
+
+    /* ТЁМНАЯ ТЕМА */
+    html.dark body {
+      background-color: var(--page) !important;
+      color: var(--text) !important;
+    }
+
+    html.dark #about,
+    html.dark #activities {
+      background-color: var(--page) !important;
+    }
+
+    html.dark #departments {
+      background-color: var(--section) !important;
+    }
+
+    html.dark #values {
+      background-color: var(--values-bg) !important;
+    }
+
+    html.dark .bg-white,
+    html.dark article.bg-white {
+      background-color: var(--card) !important;
+      border-color: var(--border) !important;
+    }
+
+    html.dark [style*="background:#e7f6fc"],
+    html.dark [style*="background: #e7f6fc"],
+    html.dark [style*="background:#f8f3e4"],
+    html.dark [style*="background: #f8f3e4"],
+    html.dark [style*="background:#f5f9fc"],
+    html.dark [style*="background: #f5f9fc"],
+    html.dark [style*="background:#e5f5fc"],
+    html.dark [style*="background: #e5f5fc"] {
+      background-color: var(--card) !important;
+    }
+
+    html.dark .text-slate-800,
+    html.dark .text-slate-700,
+    html.dark .text-slate-600,
+    html.dark .text-slate-500 {
+      color: var(--muted) !important;
+    }
+
+    html.dark #about h2,
+    html.dark #departments h2,
+    html.dark #activities h2,
+    html.dark #values h2,
+    html.dark .department-card h3,
+    html.dark #values h3,
+    html.dark #activities h3 {
+      color: #e2e8f0 !important;
+    }
+
+    html.dark .border-slate-100 {
+      border-color: var(--border) !important;
+    }
+
+    html.dark #about a[style*="--navy"] {
+      color: #e2e8f0 !important;
+    }
+
+    .hero-bg,
+    .hero-bg * {
+      color-scheme: dark;
+    }
+
+    @media (max-width: 1100px) {
+      .nav-link {
+        padding: 9px 9px !important;
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      #themeToggle {
+        padding: 8px 9px;
+        font-size: 11px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-slate-800">
+
+  <!-- НАВИГАЦИЯ -->
+  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md shadow-sm">
+    <nav class="max-w-7xl mx-auto px-5 lg:px-8 h-20 flex items-center justify-between gap-3">
+      <a href="#home" class="flex items-center gap-3 shrink-0" aria-label="UNESCO Club - на главную">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white font-extrabold text-lg"
+             style="background:var(--navy)">
+          U<span class="gold-text">C</span>
+        </div>
+        <section>
+          <div class="font-extrabold text-sm sm:text-base tracking-wide" style="color:var(--navy)">
+            UNESCO CLUB
+          </div>
+          <div class="text-xs text-slate-500">NIS AKTOBE</div>
+        </section>
+      </a>
+
+      <section class="hidden md:flex items-center gap-3 text-sm font-semibold">
+        <a href="#about" class="nav-link">О клубе</a>
+        <a href="#departments" class="nav-link">Департаменты</a>
+        <a href="#activities" class="nav-link">Деятельность</a>
+        <a href="#values" class="nav-link">Наши ценности</a>
+      </section>
+
+      <section class="flex items-center gap-2">
+        <a href="#departments"
+           class="hidden sm:inline-flex items-center gap-2 px-4 py-3 rounded-xl text-white text-sm font-bold hover:opacity-90 transition"
+           style="background:#0077b6">
+          Направления <span>→</span>
+        </a>
+
+        <button id="themeToggle" type="button"
+                aria-label="Включить ночной режим"
+                aria-pressed="false">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span id="themeLabel" class="hidden sm:inline">Ночной режим</span>
+        </button>
+
+        <button id="menuButton"
+                type="button"
+                class="md:hidden text-2xl p-2"
+                aria-label="Открыть меню"
+                aria-controls="mobileMenu"
+                aria-expanded="false">
+          ☰
+        </button>
+      </section>
+    </nav>
+
+    <div id="mobileMenu" class="hidden md:hidden border-t px-5 py-4 space-y-3">
+      <a href="#about">О клубе</a>
+      <a href="#departments">Департаменты</a>
+      <a href="#activities">Деятельность</a>
+      <a href="#values">Наши ценности</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section id="home" class="hero-bg relative overflow-hidden min-h-screen flex items-center pt-24">
+      <div class="circle-decoration w-72 h-72 -right-20 top-28"></div>
+      <div class="circle-decoration w-96 h-96 -right-10 top-20"></div>
+      <div class="circle-decoration w-48 h-48 left-1/3 -bottom-24"></div>
+
+      <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 grid lg:grid-cols-2 gap-14 items-center relative z-10">
+        <section>
+          <div class="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-white/90 text-xs sm:text-sm font-semibold mb-8">
+            <span class="w-2 h-2 rounded-full" style="background:var(--gold)"></span>
+            NIS AKTOBE · STUDENT COMMUNITY
+          </div>
+
+          <p class="section-label text-xs sm:text-sm font-bold gold-text mb-5">
+            МОЛОДЁЖЬ. ИДЕИ. ИЗМЕНЕНИЯ.
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-7">
+            Меняем мир<br>
+            <span class="gradient-text">вместе.</span>
+          </h1>
+
+          <p class="text-white/75 text-base sm:text-lg leading-8 max-w-xl mb-9">
+            UNESCO Club NIS Aktobe - сообщество инициативных учеников,
+            объединённых идеями образования, культуры, науки и устойчивого развития.
+          </p>
+
+          <section class="flex flex-wrap gap-4">
+            <a href="#about"
+               class="inline-flex items-center gap-3 rounded-xl px-7 py-4 font-bold text-sm hover:scale-105 transition"
+               style="background:var(--gold);color:#071d38">
+              Открыть мир клуба <span>→</span>
+            </a>
+
+            <a href="#departments"
+               class="inline-flex items-center gap-3 rounded-xl px-7 py-4 border border-white/30 text-white font-bold text-sm hover:bg-white/10 transition">
+              Наши департаменты
+            </a>
+          </section>
+
+          <section class="mt-12 flex flex-wrap gap-x-8 gap-y-4 text-white/65 text-sm">
+            <div class="flex items-center gap-2"><span class="gold-text">✦</span> Культура</div>
+            <div class="flex items-center gap-2"><span class="gold-text">✦</span> Образование</div>
+            <div class="flex items-center gap-2"><span class="gold-text">✦</span> Сотрудничество</div>
+          </section>
+        </section>
+
+        <section class="relative max-w-xl mx-auto w-full">
+          <div class="absolute inset-4 rounded-full blur-3xl opacity-30" style="background:var(--blue)"></div>
+
+          <div class="relative rounded-[2rem] border border-white/15 bg-white/5 backdrop-blur-sm p-5 sm:p-8 glow">
+            <div class="flex items-center justify-between mb-8">
+              <div class="text-white/70 text-xs font-bold tracking-widest">OUR VISION</div>
+              <div class="flex gap-2">
+                <span class="w-2 h-2 rounded-full bg-white/30"></span>
+                <span class="w-2 h-2 rounded-full" style="background:var(--gold)"></span>
+                <span class="w-2 h-2 rounded-full" style="background:var(--blue)"></span>
+              </div>
+            </div>
+
+            <div class="aspect-square max-h-96 mx-auto relative flex items-center justify-center">
+              <div class="absolute w-[85%] h-[85%] rounded-full border border-white/15"></div>
+              <div class="absolute w-[65%] h-[65%] rounded-full border border-dashed border-white/25"></div>
+              <div class="absolute w-[45%] h-[45%] rounded-full border border-white/20"></div>
+
+              <svg viewBox="0 0 300 300" class="w-full h-full max-w-80 relative z-10"
+                   fill="none" xmlns="http://www.w3.org/2000/svg"
+                   role="img" aria-label="Символ единства и сотрудничества">
+                <circle cx="150" cy="150" r="87" fill="#009CDE" fill-opacity=".13" stroke="#009CDE" stroke-opacity=".7"/>
+                <circle cx="150" cy="150" r="67" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="4 7"/>
+                <path d="M150 82 L150 218 M82 150 L218 150" stroke="white" stroke-opacity=".25"/>
+                <circle cx="150" cy="150" r="46" fill="#002F6C" stroke="#D4AF37" stroke-width="2"/>
+                <path d="M150 108 L159 135 L187 135 L164 152 L173 180 L150 163 L127 180 L136 152 L113 135 L141 135 Z" fill="#D4AF37"/>
+                <circle cx="150" cy="55" r="12" fill="#D4AF37"/>
+                <circle cx="235" cy="150" r="10" fill="#009CDE" stroke="white" stroke-opacity=".6"/>
+                <circle cx="150" cy="245" r="11" fill="#D4AF37"/>
+                <circle cx="65" cy="150" r="10" fill="#009CDE" stroke="white" stroke-opacity=".6"/>
+                <circle cx="88" cy="88" r="7" fill="white"/>
+                <circle cx="212" cy="88" r="7" fill="#009CDE"/>
+                <circle cx="212" cy="212" r="7" fill="white"/>
+                <circle cx="88" cy="212" r="7" fill="#D4AF37"/>
+                <path d="M150 55 L150 82 M235 150 L218 150 M150 245 L150 218 M65 150 L82 150" stroke="white" stroke-opacity=".5" stroke-width="1.5"/>
+              </svg>
+
+              <div class="absolute top-4 left-0 sm:left-2 rounded-xl border border-white/15 bg-[#002F6C]/90 px-4 py-3 text-white text-xs font-bold">
+                <span class="gold-text">01</span> Культура
+              </div>
+
+              <div class="absolute top-1/3 right-0 rounded-xl border border-white/15 bg-[#002F6C]/90 px-4 py-3 text-white text-xs font-bold">
+                <span class="gold-text">02</span> Диалог
+              </div>
+
+              <div class="absolute bottom-6 left-0 sm:left-2 rounded-xl border border-white/15 bg-[#002F6C]/90 px-4 py-3 text-white text-xs font-bold">
+                <span class="gold-text">03</span> Будущее
+              </div>
+            </div>
+
+            <div class="mt-6 border-t border-white/15 pt-5 flex items-center justify-between gap-4">
+              <div>
+                <div class="text-white font-bold">Think globally.</div>
+                <div class="text-white/60 text-sm">Act locally.</div>
+              </div>
+              <div class="text-3xl gold-text">✳</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+    </section>
+
+    <!-- О КЛУБЕ -->
+    <section id="about" class="py-24 sm:py-28">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="section-label text-xs font-extrabold mb-4" style="color:var(--blue)">КТО МЫ?</p>
+
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-7" style="color:var(--navy)">
+              Пространство для<br>
+              <span style="color:var(--blue)">больших идей.</span>
+            </h2>
+
+            <p class="text-slate-600 leading-8 mb-5">
+              UNESCO Club NIS Aktobe - школьное сообщество, в котором ученики
+              превращают идеи в проекты, учатся работать в команде и вносят
+              вклад в развитие своего общества.
+            </p>
+
+            <p class="text-slate-600 leading-8 mb-8">
+              Мы вдохновляемся ценностями ЮНЕСКО: миром, взаимопониманием,
+              уважением культурного разнообразия и доступом к качественному образованию.
+            </p>
+
+            <a href="#values" class="inline-flex items-center gap-3 font-bold" style="color:var(--navy)">
+              Узнать наши ценности <span style="color:var(--gold)">→</span>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-3xl p-7 sm:p-9 text-white min-h-52 flex flex-col justify-between" style="background:var(--navy)">
+              <div class="text-4xl">🌍</div>
+              <div>
+                <div class="text-xl font-extrabold mb-2">Глобальное мышление</div>
+                <p class="text-white/75 text-sm leading-6">Видим мир шире и действуем осознанно.</p>
+              </div>
+            </div>
+
+            <div class="rounded-3xl p-7 sm:p-9 min-h-52 flex flex-col justify-between mt-8" style="background:var(--soft-blue)">
+              <div class="text-4xl">💡</div>
+              <div>
+                <div class="text-xl font-extrabold mb-2" style="color:var(--navy)">Новые идеи</div>
+                <p class="text-slate-600 text-sm leading-6">Создаём проекты и ищем решения.</p>
+              </div>
+            </div>
+
+            <div class="rounded-3xl p-7 sm:p-9 min-h-52 flex flex-col justify-between" style="background:var(--soft-cream)">
+              <div class="text-4xl">🤝</div>
+              <div>
+                <div class="text-xl font-extrabold mb-2" style="color:var(--navy)">Единство</div>
+                <p class="text-slate-600 text-sm leading-6">Уважаем различия и поддерживаем друг друга.</p>
+              </div>
+            </div>
+
+            <div class="rounded-3xl p-7 sm:p-9 text-white min-h-52 flex flex-col justify-between mt-8" style="background:var(--blue)">
+              <div class="text-4xl">🚀</div>
+              <div>
+                <div class="text-xl font-extrabold mb-2">Действие</div>
+                <p class="text-white/80 text-sm leading-6">Не ждём перемен - создаём их сами.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ДЕПАРТАМЕНТЫ -->
+    <section id="departments" class="py-24 sm:py-28 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-14">
+          <p class="section-label text-xs font-extrabold mb-4" style="color:var(--blue)">НАШИ НАПРАВЛЕНИЯ</p>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5" style="color:var(--navy)">
+            Восемь направлений.<br>Одна большая цель.
+          </h2>
+
+          <p class="text-slate-500 leading-7">
+            Каждый департамент раскрывает свой потенциал и помогает воплощатьs
+            миссию клуба в жизнь.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <article class="department-card bg-white rounded-3xl p-7 border border-slate-100">
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl mb-6" style="background:#fce8ee">❤️</div>
+            <div class="text-xs font-extrabold tracking-widest mb-3" style="color:var(--blue)">01</div>
+            <h3 class="text-lg font-extrabold mb-3" style="color:var(--navy)">Волонтёрство</h3>
+            <p class="text-sm text-slate-500 leading-7">Социальные проекты, благотворительные акции, взаимопомощь и добрые дела.</p>
+          </article>
+
+          <article class="department-card bg-white rounded-3xl p-7 border border-slate-100">
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl mb-6" style="background:#e5f5fc">🌱</div>
+            <div class="text-xs font-extrabold tracking-widest mb-3" style="color:var(--blue)">02</div>
+            <h3 class="text-lg font-extrabold mb-3" style="color:var(--navy)">Экология</h3>
+            <p class="text-sm text-slate-500 leading-7">Экологические инициативы, защита природы и формирование устойчивых привычек.</p>
+          </article>
+
+          <article class="department-card bg-white rounded-3xl p-7 border border-slate-100">
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl mb-6" style="background:#e7f3ff">📸</div>
+            <div class="text-xs font-extrabold tracking-widest mb-3" style="color:var(--blue)">03</div>
+            <h3 class="text-lg font-extrabold mb-3" style="color:var(--navy)">Медиа</h3>
+            <p class="text-sm text-slate-500 leading-7">Фото и видеосъёмка, дизайн, публикации и освещение деятельности клуба.</p>
+          </article>
+
+          <article class="department-card bg-white rounded-3xl p-7 border border-slate-100">
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl mb-6" style="background:#fff4dc">🎭</div>
+            <div class="text-xs font-extrabold tracking-widest mb-3" style="color:var(--blue)">04</div>
+            <h3 class="text-lg font-extrabold mb-3" style="color:var(--navy)">Культура</h3>
+            <p class="text-sm text-slate-500 leading-7">Сохранение культурного наследия, знакомство с традициями и культурный обмен.</p>
+          </article>
+
+          <article class="department-card bg-white rounded-3xl p-7 border border-slate-100">
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl mb-6" style="background:#e8eafe">📚</div>
+            <div class="text-xs font-extrabold tracking-widest mb-3" style="color:var(--blue)">05</div>
+            <h3 class="text-lg font-extrabold mb-3" style="color:var(--navy)">Образование</h3>
+            <p class="text-sm text-slate-500 leading-7">Образовательные мероприятия, обмен знаниями и развитие новых навыков.</p>
+          </article>
+
+          <article class="department-card bg-white rounded-3xl p-7 border border-slate-100">
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl mb-6" style="background:#f1eaff">💻</div>
+            <div class="text-xs font-extrabold tracking-widest mb-3" style="color:var(--blue)">06</div>
+            <h3 class="text-lg font-extrabold mb-3" style="color:var(--navy)">IT</h3>
+            <p class="text-sm text-slate-500 leading-7">Разработка цифровых решений, работа с технологиями и поддержка онлайн-проектов клуба.</p>
+          </article>
+
+          <article class="department-card bg-white rounded-3xl p-7 border border-slate-100">
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl mb-6" style="background:#e5f7f1">🏆</div>
+            <div class="text-xs font-extrabold tracking-widest mb-3" style="color:var(--blue)">07</div>
+            <h3 class="text-lg font-extrabold mb-3" style="color:var(--navy)">Спорт</h3>
+            <p class="text-sm text-slate-500 leading-7">Спортивные мероприятия, командные игры, активный образ жизни и здоровые привычки.</p>
+          </article>
+
+          <article class="department-card bg-white rounded-3xl p-7 border border-slate-100">
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl mb-6" style="background:#fff0e3">📋</div>
+            <div class="text-xs font-extrabold tracking-widest mb-3" style="color:var(--blue)">08</div>
+            <h3 class="text-lg font-extrabold mb-3" style="color:var(--navy)">Организация</h3>
+            <p class="text-sm text-slate-500 leading-7">Планирование мероприятий, координация команды и организация проектов клуба.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ДЕЯТЕЛЬНОСТЬ -->
+    <section id="activities" class="py-24 sm:py-28">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+          <div>
+            <p class="section-label text-xs font-extrabold mb-4" style="color:var(--blue)">ОТ ИДЕИ К РЕЗУЛЬТАТУ</p>
+
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-7" style="color:var(--navy)">
+              Мы не просто<br>говорим - <span style="color:var(--blue)">мы действуем.</span>
+            </h2>
+
+            <p class="text-slate-600 leading-8 mb-8">
+              Наша деятельность - это пространство для инициатив, командной
+              работы и реальных изменений. Мы создаём возможности для развития
+              и учимся влиять на мир вокруг нас.
+            </p>
+
+            <div class="space-y-5">
+              <div class="flex gap-4">
+                <div class="w-12 h-12 shrink-0 rounded-xl flex items-center justify-center text-xl" style="background:#e5f5fc">🌿</div>
+                <div>
+                  <h3 class="font-extrabold mb-1" style="color:var(--navy)">Социальные и экологические акции</h3>
+                  <p class="text-sm text-slate-500 leading-6">Инициативы, направленные на улучшение окружающей среды и общества.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="w-12 h-12 shrink-0 rounded-xl flex items-center justify-center text-xl" style="background:#fff4dc">🎤</div>
+                <div>
+                  <h3 class="font-extrabold mb-1" style="color:var(--navy)">Форумы и мероприятия</h3>
+                  <p class="text-sm text-slate-500 leading-6">Встречи, дискуссии и события для обмена опытом и идеями.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="w-12 h-12 shrink-0 rounded-xl flex items-center justify-center text-xl" style="background:#eee9ff">🤝</div>
+                <div>
+                  <h3 class="font-extrabold mb-1" style="color:var(--navy)">Командные проекты</h3>
+                  <p class="text-sm text-slate-500 leading-6">Совместная работа, лидерство и воплощение новых решений.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -inset-5 rounded-[2rem] opacity-50 blur-2xl" style="background:#d9f3ff"></div>
+
+            <div class="relative rounded-[2rem] p-8 sm:p-10 text-white overflow-hidden" style="background:#003b64">
+              <div class="absolute -right-12 -top-12 w-48 h-48 rounded-full border border-white/10"></div>
+              <div class="absolute -right-4 -top-4 w-32 h-32 rounded-full border border-white/10"></div>
+
+              <p class="section-label text-xs font-bold gold-text mb-5">OUR MISSION</p>
+              <div class="text-4xl sm:text-5xl mb-6">✳</div>
+
+              <h3 class="text-2xl sm:text-3xl font-extrabold leading-snug mb-5">
+                Создавать будущее, в котором хочется жить.
+              </h3>
+
+              <p class="text-white/75 leading-7 mb-8">
+                Через знания, сотрудничество и инициативу мы стремимся сделать
+                наше сообщество более открытым, осознанным и устойчивым.
+              </p>
+
+              <div class="flex items-center gap-4 border-t border-white/15 pt-6">
+                <div class="w-12 h-1 rounded-full" style="background:var(--gold)"></div>
+                <span class="text-sm text-white/80">UNESCO Club · NIS Aktobe</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- НАШИ ЦЕННОСТИ -->
+    <section id="values" class="py-24 sm:py-28" style="background:var(--values-bg)">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <p class="section-label text-xs font-extrabold mb-4" style="color:var(--blue)">НАШ ФУНДАМЕНТ</p>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5" style="color:var(--navy)">
+            Ценности, которые нас объединяют
+          </h2>
+
+          <p class="text-slate-500 leading-7">
+            Мы верим, что большие перемены начинаются с отношения к людям,
+            знаниям и миру вокруг нас.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div class="bg-white rounded-3xl p-7 text-center border border-slate-100">
+            <div class="text-4xl mb-5">🕊️</div>
+            <h3 class="font-extrabold text-lg mb-3" style="color:var(--navy)">Мир</h3>
+            <p class="text-sm text-slate-500 leading-6">Строим диалог, уважаем друг друга и выбираем сотрудничество.</p>
+          </div>
+
+          <div class="bg-white rounded-3xl p-7 text-center border border-slate-100">
+            <div class="text-4xl mb-5">🌍</div>
+            <h3 class="font-extrabold text-lg mb-3" style="color:var(--navy)">Разнообразие</h3>
+            <p class="text-sm text-slate-500 leading-6">Ценим уникальность культур, взглядов и жизненного опыта.</p>
+          </div>
+
+          <div class="bg-white rounded-3xl p-7 text-center border border-slate-100">
+            <div class="text-4xl mb-5">📖</div>
+            <h3 class="font-extrabold text-lg mb-3" style="color:var(--navy)">Знания</h3>
+            <p class="text-sm text-slate-500 leading-6">Учимся постоянно и делимся тем, что узнаём.</p>
+          </div>
+
+          <div class="bg-white rounded-3xl p-7 text-center border border-slate-100">
+            <div class="text-4xl mb-5">✨</div>
+            <h3 class="font-extrabold text-lg mb-3" style="color:var(--navy)">Ответственность</h3>
+            <p class="text-sm text-slate-500 leading-6">Начинаем изменения с себя и отвечаем за свои действия.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПРИСОЕДИНЕНИЕ К КЛУБУ -->
+    <section class="py-20 sm:py-24 hero-bg relative overflow-hidden">
+      <div class="circle-decoration w-72 h-72 -right-20 -top-20"></div>
+
+      <div class="max-w-4xl mx-auto px-5 text-center relative z-10">
+        <div class="text-4xl gold-text mb-6">✳</div>
+
+        <p class="section-label text-xs font-bold gold-text mb-5">
+          UNESCO CLUB · NIS AKTOBE
+        </p>
+
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight mb-6">
+          Большие изменения<br>начинаются с нас.
+        </h2>
+
+        <p class="text-white/80 leading-8 max-w-2xl mx-auto mb-9">
+          Идеи обретают силу, когда мы объединяемся. Вместе мы можем создавать,
+          вдохновлять и делать мир лучше.
+        </p>
+
+        <div class="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm px-6 py-6 sm:px-9 sm:py-8 max-w-2xl mx-auto mb-9">
+          <p class="text-white text-base sm:text-lg font-semibold leading-8">
+            Для вступления в клуб необходимо обратиться к министру выбранного департамента.
+          </p>
+        </div>
+
+        <a href="#departments"
+           class="inline-flex items-center gap-3 rounded-xl px-7 py-4 font-bold text-sm hover:scale-105 transition"
+           style="background:var(--gold);color:#071d38">
+          Выбрать департамент <span>↑</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ПОДВАЛ -->
+  <footer class="bg-[#001832] text-white/70 py-8">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <a href="#home" class="flex items-center gap-3" aria-label="UNESCO Club - наверх">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center text-white font-extrabold" style="background:var(--navy)">
+          U<span class="gold-text">C</span>
+        </div>
+
+        <div>
+          <div class="text-white font-bold text-sm">UNESCO CLUB</div>
+          <div class="text-xs">NIS AKTOBE</div>
+        </div>
+      </a>
+
+      <p class="text-xs text-center">Образование · Культура · Сотрудничество</p>
+
+      <a href="#home" class="text-sm hover:text-white transition">Наверх ↑</a>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 mt-6 pt-5 border-t border-white/10 text-center text-xs">
+      © <span id="year"></span> UNESCO Club - NIS Aktobe
+    </div>
+  </footer>
+
+  <script>
+    // Переключение дневной и ночной темы
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+
+    function setTheme(isDark) {
+      document.documentElement.classList.toggle('dark', isDark);
+      document.body.classList.toggle('dark', isDark);
+
+      themeIcon.textContent = isDark ? '☀️' : '🌙';
+      themeLabel.textContent = isDark ? 'Дневной режим' : 'Ночной режим';
+
+      themeToggle.setAttribute(
+        'aria-label',
+        isDark ? 'Включить дневной режим' : 'Включить ночной режим'
+      );
+
+      themeToggle.setAttribute('aria-pressed', String(isDark));
+
+      try {
+        localStorage.setItem('unesco-theme', isDark ? 'dark' : 'light');
+      } catch (e) {}
+    }
+
+    let initialDark = document.documentElement.classList.contains('dark');
+
+    try {
+      initialDark = localStorage.getItem('unesco-theme') === 'dark';
+    } catch (e) {}
+
+    setTheme(initialDark);
+
+    themeToggle.addEventListener('click', () => {
+      setTheme(!document.documentElement.classList.contains('dark'));
+    });
+
+    // Мобильное меню
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuButton.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.toggle('hidden');
+
+      menuButton.textContent = isHidden ? '☰' : '✕';
+      menuButton.setAttribute('aria-expanded', String(!isHidden));
+      menuButton.setAttribute(
+        'aria-label',
+        isHidden ? 'Открыть меню' : 'Закрыть меню'
+      );
+    });
+
+    // Закрытие меню после выбора раздела
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuButton.textContent = '☰';
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Открыть меню');
+      });
+    });
+
+    // Автоматический год в подвале
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
